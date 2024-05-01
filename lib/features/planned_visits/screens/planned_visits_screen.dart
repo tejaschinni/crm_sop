@@ -1,3 +1,4 @@
+import 'package:crm/demo/calendar_demo_screen.dart';
 import 'package:crm/features/customer/customer_card_widget.dart';
 import 'package:crm/features/planned_visits/screens/calender_visit_screen.dart';
 import 'package:crm/features/planned_visits/screens/planned_visit_calendarview.dart';
@@ -144,7 +145,7 @@ class _PlannedVisitsScreenState extends State<PlannedVisitsScreen> {
               ),
               Expanded(
                   child: isCalander
-                      ? CalendarMeetingSchedule()
+                      ? PlannedVisitCalendarViewScreen()
                       : Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: ListView.builder(

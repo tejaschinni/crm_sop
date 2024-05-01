@@ -24,9 +24,22 @@ class _PlannedVisitCalendarViewScreenState
         'Conference', startTime, endTime, const Color(0xFF0F8644), false));
 
     meetings.add(Meeting(
-        'Meeting',
+        'Meeting 1',
+        DateTime(2024, 04, 23, 12, 0, 0),
+        DateTime(2024, 04, 23, 12, 0, 0).add(const Duration(hours: 2)),
+        const Color(0xFF0F0644),
+        false));
+
+    meetings.add(Meeting(
+        'Meeting 2',
         DateTime(2024, 04, 24, 16, 0, 0),
         DateTime(2024, 04, 24, 16, 0, 0).add(const Duration(hours: 2)),
+        const Color(0xFF0F0644),
+        false));
+    meetings.add(Meeting(
+        'Meeting 3',
+        DateTime(2024, 04, 26, 16, 0, 0),
+        DateTime(2024, 04, 26, 16, 0, 0).add(const Duration(hours: 2)),
         const Color(0xFF0F0644),
         false));
     return meetings;
@@ -40,11 +53,14 @@ class _PlannedVisitCalendarViewScreenState
           children: [
             Expanded(
               child: SfCalendar(
-                view: CalendarView.week,
+                view: CalendarView.day,
                 dataSource: MeetingDataSource(_getDataSource()),
+                // allowedViews: [CalendarView.day],
+
                 monthViewSettings: MonthViewSettings(
+                    agendaItemHeight: 500,
                     appointmentDisplayMode:
-                        MonthAppointmentDisplayMode.indicator),
+                        MonthAppointmentDisplayMode.appointment),
               ),
             )
           ],
